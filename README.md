@@ -76,3 +76,5 @@ done
 ```
 
 The optional aggregate scripts locate the three npm projects beside this index. Install dependencies in each project first; the lab supplies no shared node_modules. Each repository remains usable alone. Public source, CI status and GitHub release assets are separate from npm registry publication or validated demand. See [contributing](CONTRIBUTING.md), [security](SECURITY.md) and [changes](CHANGELOG.md).
+
+[Public source and CI readiness](docs/public-alpha.md) records the publication boundary and source evidence.
