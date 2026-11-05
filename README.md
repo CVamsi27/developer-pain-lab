@@ -67,6 +67,8 @@ See [further repository exploration](docs/more-repositories.md), [independent fo
 
 Synthetic successes are technical evidence, not proof of demand, setup-time savings or retained use. Each experiment still needs five independent developers, three successful integrations and two later retained uses as targets. There are zero trial participants. Public source and alpha distribution are explicitly authorized for this release. No npm registry publication, outreach or production action is included.
 
+Deployproof is the first onboarding experiment: its [README](https://github.com/CVamsi27/deployproof#readme) offers a one-command synthetic broken/fixed demo without cloning or a container engine. Its [pilot kit](https://github.com/CVamsi27/deployproof/blob/HEAD/docs/pilot.md) records setup effort, findings and later use. Launch texts remain drafts. Evaluate those integrations before adding another standalone project.
+
 ## Clone the independent repositories
 
 ```sh
