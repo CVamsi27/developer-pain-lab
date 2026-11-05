@@ -71,6 +71,8 @@ Deployproof is the first onboarding experiment: its [README](https://github.com/
 
 ## Clone the independent repositories
 
+The next verified integration is Deployproof's [pnpm 11.23.0 example](https://github.com/CVamsi27/deployproof/tree/v0.1.0-alpha.2/examples/pnpm), with four actual generated-artifact controls and optional constrained OrbStack smoke. Retryglass's [installed starter path](https://github.com/CVamsi27/retryglass#try-the-starter-without-cloning) needs no source checkout or pnpm. GitHub release packages are the owner's selected installation path; npm publication is deferred. These are maintainer checks, not independent trials.
+
 ```sh
 for project in retryglass deployproof rolloutproof revokeproof developer-pain-lab; do
   git clone "https://github.com/CVamsi27/${project}.git"
