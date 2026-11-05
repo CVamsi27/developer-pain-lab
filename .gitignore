@@ -1,0 +1,15 @@
+node_modules/
+artifacts/
+test-results/
+playwright-report/
+*.tgz
+.env
+.env.*
+!.env.example
+.DS_Store
+.cloud-attachments/
+.codex/
+.cache/
+
+# Internal execution logs/plans are separate from public research conclusions.
+docs/superpowers/
