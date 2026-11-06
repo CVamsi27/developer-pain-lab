@@ -29,17 +29,15 @@ Node 24.22.1 is selected in each `.node-version`; package manifests retain the e
 
 ## Optional aggregate commands
 
-Install dependencies separately in the three npm project roots first. From this research folder:
+Install dependencies separately in Deployproof, Rolloutproof and Revokeproof. From this research folder:
 
 ```sh
 npm ci --ignore-scripts
 npm run check
 npm run pack:check
-npm run test:integration
-npm run measure
 ```
 
-These commands execute each sibling project's own npm scripts, sequentially. Missing project folders or failed commands fail the aggregate gate. `measure` preserves per-project JSON and nonzero failure semantics under ignored `artifacts/measurements/`. It covers the three experiments; Retryglass remains independently verified in its own project.
+The lab runs each project's source or package checks in sequence. Missing siblings fail the aggregate check. The lab's `test:integration` and `measure` commands print project-local instructions and exit 2. Run those commands in the relevant project so its supervisor owns resource cleanup. Existing measurement records remain historical evidence.
 
 ## OrbStack runtime
 
@@ -54,7 +52,8 @@ export CONTAINER_HOST="unix://${HOME}/.orbstack/run/docker.sock"
 env -u DOCKER_CONTEXT DOCKER_HOST="$CONTAINER_HOST" "$CONTAINER_CLI" pull node:22-alpine
 env -u DOCKER_CONTEXT DOCKER_HOST="$CONTAINER_HOST" "$CONTAINER_CLI" pull postgres:17-bookworm
 env -u DOCKER_CONTEXT DOCKER_HOST="$CONTAINER_HOST" "$CONTAINER_CLI" build --tag rolloutproof-fixture:local ../rolloutproof/examples/fixture
-npm run test:integration
+(cd ../deployproof && npm run test:integration)
+(cd ../rolloutproof && npm run test:integration)
 ```
 
 Revokeproof uses actual Chromium against its explicitly started synthetic loopback fixture; install the matching browser explicitly from its project with `npx playwright install chromium`. Retryglass uses its separately named `RETRYGLASS_CONTAINER_*` overrides.
@@ -63,15 +62,15 @@ Client settings stay in supervisor processes and never enter application workers
 
 ## Evidence and continuation
 
-See [further repository exploration](docs/more-repositories.md), [independent folder verification](docs/independent-projects.md), the [original technical evidence](docs/verification.md), [competitor comparisons](docs/comparisons.md), and [adoption targets](docs/adoption-trials.md). Historical artifacts remain here; new project-local run output belongs to that project's ignored artifacts directory.
+See the [12-month roadmap](docs/roadmap.md), [further repository exploration](docs/more-repositories.md), [independent folder verification](docs/independent-projects.md), the [original technical evidence](docs/verification.md), [competitor comparisons](docs/comparisons.md), and [adoption targets](docs/adoption-trials.md). Historical artifacts remain here; new project-local run output belongs to that project's ignored artifacts directory.
 
-Synthetic successes are technical evidence, not proof of demand, setup-time savings or retained use. Each experiment still needs five independent developers, three successful integrations and two later retained uses as targets. There are zero trial participants. Public source and alpha distribution are explicitly authorized for this release. No npm registry publication, outreach or production action is included.
+Synthetic successes are technical evidence, not proof of demand, setup-time savings or retained use. Each experiment still needs five independent developers, three successful integrations and two later retained uses as targets. The [trial record](docs/adoption-trials.md) shows the open enrollment window and measured participation. Public source and alpha distribution are explicitly authorized for this release. No npm registry publication, outreach or production action is included.
 
 Deployproof is the first onboarding experiment: its [README](https://github.com/CVamsi27/deployproof#readme) offers a one-command synthetic broken/fixed demo without cloning or a container engine. Its [pilot kit](https://github.com/CVamsi27/deployproof/blob/HEAD/docs/pilot.md) records setup effort, findings and later use. Launch texts remain drafts. Evaluate those integrations before adding another standalone project.
 
 ## Clone the independent repositories
 
-The next verified integration is Deployproof's [pnpm 11.23.0 example](https://github.com/CVamsi27/deployproof/tree/v0.1.0-alpha.2/examples/pnpm), with four actual generated-artifact controls and optional constrained OrbStack smoke. Retryglass's [installed starter path](https://github.com/CVamsi27/retryglass#try-the-starter-without-cloning) needs no source checkout or pnpm. GitHub release packages are the owner's selected installation path; npm publication is deferred. These are maintainer checks, not independent trials.
+The next verified integration is Deployproof's [pnpm 11.23.0 example](https://github.com/CVamsi27/deployproof/tree/v0.1.0-alpha.3/examples/pnpm), with four actual generated-artifact controls and optional constrained OrbStack smoke. Retryglass's [installed starter path](https://github.com/CVamsi27/retryglass#try-the-starter-without-cloning) needs no source checkout or pnpm. GitHub release packages are the owner's selected installation path; npm publication is deferred. These are maintainer checks, not independent trials.
 
 ```sh
 for project in retryglass deployproof rolloutproof revokeproof developer-pain-lab; do

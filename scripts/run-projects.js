@@ -4,8 +4,14 @@ import { join } from 'node:path';
 import { projects } from './projects.js';
 
 const script = process.argv[2];
-if (process.argv.length !== 3 || !['check', 'test', 'pack:check', 'test:integration'].includes(script)) {
-  process.stderr.write('Usage: node scripts/run-projects.js <check|test|pack:check|test:integration>\n');
+if (script === 'test:integration' || script === 'measure') {
+  process.stderr.write('Run runtime checks from the project that owns the resources and cleanup:\n');
+  for (const { name } of projects) process.stderr.write(`  cd ../${name} && npm run ${script}\n`);
+  process.stderr.write('  cd ../retryglass && pnpm test:integration\n');
+  process.exit(2);
+}
+if (process.argv.length !== 3 || !['check', 'test', 'pack:check'].includes(script)) {
+  process.stderr.write('Usage: node scripts/run-projects.js <check|test|pack:check>\n');
   process.exit(2);
 }
 const results = [];

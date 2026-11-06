@@ -1,5 +1,9 @@
 # Changelog
 
+## 6 November 2026
+
+Route runtime checks and measurements to the owning project. Keep aggregate source and package checks. Record the 12-month roadmap, trial criteria and first Deployproof enrollment window.
+
 ## 0.1.0-alpha.0 — 2026-11-05
 
 First public alpha source release.

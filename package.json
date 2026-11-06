@@ -11,7 +11,7 @@
     "check": "node scripts/run-projects.js check",
     "pack:check": "node scripts/run-projects.js pack:check",
     "test:integration": "node scripts/run-projects.js test:integration",
-    "measure": "node scripts/measure.js"
+    "measure": "node scripts/run-projects.js measure"
   },
   "repository": {
     "type": "git",

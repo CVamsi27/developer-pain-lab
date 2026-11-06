@@ -24,4 +24,3 @@ jobs:
       - run: |
           node --check scripts/projects.js
           node --check scripts/run-projects.js
-          node --check scripts/measure.js
