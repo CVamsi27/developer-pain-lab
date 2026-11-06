@@ -11,6 +11,17 @@ Research, validation history and optional aggregate commands for four separate p
 
 Each folder owns its source, tests, examples, dependencies, lockfile, license, operating rules and documentation. No project needs this lab or another project's node_modules. Existing `@developer-pain-lab/*` package identities are retained for import compatibility; they are unpublished working names, not workspace dependencies or a claim to registry ownership.
 
+## Runnable case studies
+
+Each guide uses synthetic fixtures and a pinned GitHub release. It shows the failure, the repaired control, and how to adapt the check to your workflow.
+
+| If you work on | Walkthrough |
+| --- | --- |
+| Node and pnpm deployment folders | [Deployproof finds a missing runtime file](https://github.com/CVamsi27/deployproof/blob/HEAD/docs/case-study.md) |
+| BullMQ workers and retries | [Retryglass turns a duplicate email effect into a Vitest test](https://github.com/CVamsi27/retryglass/blob/HEAD/docs/case-study.md) |
+| PostgreSQL migrations and rollbacks | [Rolloutproof shows why an old reader fails after a new write](https://github.com/CVamsi27/rolloutproof/blob/HEAD/docs/case-study.md) |
+| Realtime access and Playwright | [Revokeproof checks the original WebSocket after revocation](https://github.com/CVamsi27/revokeproof/blob/HEAD/docs/case-study.md) |
+
 ## Work on a single project
 
 For Deployproof, Rolloutproof or Revokeproof, run these commands from that project's root:
