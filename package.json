@@ -10,6 +10,7 @@
     "test": "node scripts/run-projects.js test",
     "check": "node scripts/run-projects.js check",
     "pack:check": "node scripts/run-projects.js pack:check",
+    "discovery": "node scripts/discovery.js",
     "test:integration": "node scripts/run-projects.js test:integration",
     "measure": "node scripts/run-projects.js measure"
   },

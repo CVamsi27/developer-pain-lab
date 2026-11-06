@@ -66,6 +66,8 @@ See the [12-month roadmap](docs/roadmap.md), [further repository exploration](do
 
 Synthetic successes are technical evidence, not proof of demand, setup-time savings or retained use. Each experiment still needs five independent developers, three successful integrations and two later retained uses as targets. The [trial record](docs/adoption-trials.md) shows the open enrollment window and measured participation. Public source and alpha distribution are explicitly authorized for this release. No npm registry publication, outreach or production action is included.
 
+Run `npm run --silent discovery` for public repository and pinned package counts. The [monthly discovery record](docs/discovery.md) links all four live release packages and records the first observation.
+
 Deployproof is the first onboarding experiment: its [README](https://github.com/CVamsi27/deployproof#readme) offers a one-command synthetic broken/fixed demo without cloning or a container engine. Its [pilot kit](https://github.com/CVamsi27/deployproof/blob/HEAD/docs/pilot.md) records setup effort, findings and later use. Launch texts remain drafts. Evaluate those integrations before adding another standalone project.
 
 ## Clone the independent repositories

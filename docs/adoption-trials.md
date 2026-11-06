@@ -16,7 +16,7 @@ Record the work in the [blank private notes template](trial-template.csv). Copy 
 
 Require five trials, three completed integrations, two retained uses, and two concrete benefits. A benefit is an actionable issue the baseline missed or at least 25% lower recorded hands-on setup for equivalent checks. If two participants report the same blocking problem, spend up to ten hours on one repair and recheck with those participants. If the gate still misses, maintain the alpha or prepare an upstream example.
 
-The year-one target is five independent repositories retaining one tool, including three using it 90 days or more after integration. Track stars, forks and downloads monthly as discovery signals. Keep one active enrollment window and at most two feature tracks.
+The year-one target is five independent repositories retaining one tool, including three using it 90 days or more after integration. Use the [monthly discovery review](discovery.md) to track stars, forks and downloads. Keep one active enrollment window and at most two feature tracks.
 
 ## Trial record
 

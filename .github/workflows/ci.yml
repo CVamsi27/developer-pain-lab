@@ -24,3 +24,4 @@ jobs:
       - run: |
           node --check scripts/projects.js
           node --check scripts/run-projects.js
+          node --test tests/discovery.test.js
